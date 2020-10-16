@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [PostComponent],
   imports: [
     CommonModule,
   ],
