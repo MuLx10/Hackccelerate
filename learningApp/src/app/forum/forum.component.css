@@ -1,0 +1,22 @@
+.nav-link {
+  cursor:pointer;
+}
+
+.tag-pill{
+  cursor:pointer;
+}
+
+.sidebar{
+	float: right;
+	overflow: hidden;
+}
+
+.tags{
+	width: 30%;
+}
+
+.paginator{
+	position: absolute;
+	bottom: 0;
+	right: 30%;
+}

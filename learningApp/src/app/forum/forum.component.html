@@ -1,1 +1,51 @@
-<p>forum works!</p>
+<div class="home-page">
+
+  <div class="banner" *appShowAuthed="false">
+    <div class="container">
+      <h1 class="logo-font">forum</h1>
+      <p>A place to share your <i>Angular</i> knowledge.</p>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row">
+    	
+    	<mat-tab-group>
+    	  <mat-tab label="Discuss">
+    	    <ng-template matTabContent>
+    	      {{getPosts(1)}}
+    	    </ng-template>
+    	  </mat-tab>
+    	  <mat-tab label="My Posts">
+    	    <ng-template matTabContent>
+    	      {{getPosts(2)}}
+    	    </ng-template>
+    	  </mat-tab>
+    	</mat-tab-group>
+
+
+      <div class="col-md-3">
+        <div class="sidebar">
+          <p>Popular Tags</p>
+
+          <mat-chip-list class="tags" aria-label="Fish selection">
+            <mat-chip>One </mat-chip>
+            <mat-chip>Two </mat-chip>
+            <mat-chip color="primary" selected>Primary </mat-chip>
+          </mat-chip-list>
+
+          <div [hidden]="tagsLoaded">
+            Loading tags...
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer paginator">
+    	<mat-paginator [length]="100"
+    	              [pageSize]="10"
+    	              [pageSizeOptions]="[5, 10, 25, 100]">
+    	</mat-paginator>
+    </div>
+
+  </div>
+</div>
