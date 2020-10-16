@@ -1,1 +1,5 @@
-<h1>Learning App</h1>
+<app-header [user]="user$ | async"></app-header>
+<div class="wrapper-app">
+  <router-outlet></router-outlet>
+</div>
+<footer></footer>
