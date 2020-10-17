@@ -10,7 +10,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -24,15 +23,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatCardModule} from '@angular/material/card';
-import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule} from '@angular/forms';
-import { RouterModule} from '@angular/router';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatMenuModule} from '@angular/material/menu';
-import { MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { ResourceComponent } from './resource/resource.component';
@@ -69,7 +62,6 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatIconModule,
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
@@ -77,7 +69,6 @@ const routes: Routes = [
     MatInputModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatToolbarModule,
     MatExpansionModule,
     MatDividerModule,
     MatCheckboxModule,
@@ -85,15 +76,11 @@ const routes: Routes = [
     MatSidenavModule,
     MatTabsModule,
     MatListModule,
-    MatCardModule,
     MatChipsModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
     HttpClientModule,
-    FlexLayoutModule,
     MatCardModule,
-    MatProgressSpinnerModule,
-    MatFormFieldModule,
     FormsModule,
     RouterModule,
     AppRoutingModule,

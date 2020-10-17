@@ -1,17 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {Post} from '../models/post.model';
+import { ForumService } from '../services/forum.service';
+import { ChangeDetectorRef } from '@angular/core';
 
-export interface ArticleListConfig {
-  type: string;
-
-  filters: {
-    tag?: string,
-    author?: string,
-    favorited?: string,
-    limit?: number,
-    offset?: number
-  };
-}
 
 
 @Component({
@@ -22,20 +14,30 @@ export interface ArticleListConfig {
 
 export class ForumComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _http: ForumService, private cdRef:ChangeDetectorRef) { }
 
+  user: string = "all";
   isAuthenticated: boolean;
-  listConfig: ArticleListConfig = {type: 'all', filters: {}};
+  listConfig: Post = {type: 'all', filters: {}};
 
-  tags: Array<string> = ['One', 'Two', 'Three'];
-  tagsSelected: Array<string> = ['One', 'Three'];
+  tags: Array<any> = null;
+  selectedTags: Array<any> = null;
   tagsLoaded = false;
-  
+
   content: string;
 
   ngOnInit(): void {
   	this.isAuthenticated = true;
   	this.content = 'Discuss';
+    if(this.tags === null){
+      this._http.fetchAllTags().subscribe(data=>{
+        this.tags = data; this.tagsLoaded = true;
+      });
+    }
+  }
+
+  ngAfterViewChecked(){
+    this.cdRef.detectChanges();
   }
 
   getPosts(index: number){
@@ -48,14 +50,8 @@ export class ForumComponent implements OnInit {
   	return this.content;
   }
 
-  setListTo(type: string = '', filters: Object = {}) {
-    // If feed is requested but user is not authenticated, redirect to login
-    if (type === 'feed' && !this.isAuthenticated) {
-      return;
-    }
-
-    // Otherwise, set the list object
-    this.listConfig = {type: type, filters: filters};
+  changeSelected($event){
+    this.selectedTags = this.tags.filter(e=>e.selected === true);
   }
 
 }
