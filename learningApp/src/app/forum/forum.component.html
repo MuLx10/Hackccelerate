@@ -1,4 +1,4 @@
-<div class="home-page">
+<div class="forum-page">
   <div class="container page">
     <div class="row">
     	
@@ -39,6 +39,12 @@
     	              [pageSizeOptions]="[5, 10, 25, 100]">
     	</mat-paginator>
     </div>
-    
+  </div>
+
+
+  <div id="fab">
+    <button style="transform: scale(1.2);" mat-fab color="primary" aria-label="Compose" (click)="goToCompose()">
+      <mat-icon style="transform: scale(1.2);">create</mat-icon>
+    </button>
   </div>
 </div>

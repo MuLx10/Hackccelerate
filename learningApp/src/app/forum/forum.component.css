@@ -26,3 +26,10 @@
 	grid-template-columns: 3fr 1.5fr;
 	flex-direction: row;
 }
+
+#fab{
+	position: absolute;
+	right: 10%;
+	bottom: 10%;
+	position: fixed;
+}

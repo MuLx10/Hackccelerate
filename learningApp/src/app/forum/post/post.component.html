@@ -11,13 +11,16 @@
 	<div class="actions">
 		<mat-icon 
 		  id="like-icon"
+		  color="warn"
 			matBadge="{{post.likes}}" 
 			(click)="likePost(post.id)" 
-			matBadgeColor="accent" matBadgeSize="small">thumb_up</mat-icon>
+			matBadgeColor="primary" matBadgeSize="small">favorite</mat-icon>
 		{{post.comments.length}} Comments
 	</div>
 	<mat-card-footer></mat-card-footer>
-	<br/><br/>
+	<br/>
+	<mat-divider></mat-divider>
+	<br/>
 </mat-card>
 
 
