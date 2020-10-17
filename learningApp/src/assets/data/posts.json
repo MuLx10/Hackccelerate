@@ -6,7 +6,7 @@
 		"user": "mulx10",
 		"tags":["interviews"],
 		"comments":["1", "2"],
-		"timestamp":"",
+		"timestamp":"12233",
 		"likes":5
 	},
 	{
@@ -16,7 +16,27 @@
 		"user": "mulx10",
 		"tags":["physics", "quantam-mechanics"],
 		"comments":["3"],
-		"timestamp":"",
+		"timestamp":"2323",
+		"likes":2
+	},
+	{
+		"id":"2",
+		"title":"Electron in a box", 
+		"content": "Can someone please help me derive the equation for electron in a potential well",
+		"user": "mulx10",
+		"tags":["physics", "quantam-mechanics"],
+		"comments":["3"],
+		"timestamp":"2323",
+		"likes":2
+	},
+	{
+		"id":"2",
+		"title":"Electron in a box", 
+		"content": "Can someone please help me derive the equation for electron in a potential well",
+		"user": "mulx10",
+		"tags":["physics", "quantam-mechanics"],
+		"comments":["3"],
+		"timestamp":"2323",
 		"likes":2
 	}
 ]

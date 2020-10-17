@@ -1,14 +1,19 @@
-  <mat-toolbar color="primary">
-    <!-- TODO Think of a new name -->
-    <span> Learning App </span>
-    <span class="spacer"></span>
-    <ul>
-      <li *ngIf="!user">
-        <a mat-button routerLink='/auth/login' routerLinkActive="mat-accent">Login</a>
-      </li>
-      <li *ngIf='user'>
-        <button mat-raised-button color="accent" (click)='logout()'>Logout</button>
-      </li>
-    </ul>
-  </mat-toolbar>
+<mat-toolbar id="navbar" color="primary">
+  <div class="container">
+    <a routerLink="/" class="logo">LearningApp</a>
+    <nav>
+      <ul>
+        <li><a href="#" routerLink="/">Home</a></li>
+        <li><a href="#" routerLink="/forum">Forum</a></li>
+        <li><a href="#" routerLink="/resource">Resources</a></li>
+        <li *ngIf="!user">
+          <a routerLink='/auth/login' routerLinkActive="mat-accent">Login</a>
+        </li>
+        <li *ngIf='user'>
+          <button color="accent" (click)='logout()'>Logout</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</mat-toolbar>
 

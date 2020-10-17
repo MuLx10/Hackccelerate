@@ -6,17 +6,19 @@
   cursor:pointer;
 }
 
-.sidebar{
-	float: right;
-	overflow: hidden;
-}
-
 .tags{
 	width: 30%;
 }
 
 .paginator{
-	position: absolute;
 	bottom: 0;
-	right: 30%;
+	right: 40%;
+	padding: 5%;
+	padding-right: 30%;
+}
+.sidebar{
+	position: absolute;
+	right: 10%;
+	top:30%;
+	z-index: 10;
 }

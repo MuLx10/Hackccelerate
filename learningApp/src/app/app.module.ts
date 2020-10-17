@@ -19,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,11 +43,6 @@ export function appInitializerFactory(authService: AuthService) {
   return () => authService.checkUserOnFirstLoad();
 }
 
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'forum', component: ForumComponent },
-  { path: 'resource', component: ResourceComponent }
-];
 
 @NgModule({
   declarations: [
@@ -58,7 +54,6 @@ const routes: Routes = [
     HeaderComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -86,7 +81,8 @@ const routes: Routes = [
     AppRoutingModule,
     MatToolbarModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatBadgeModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -20,8 +20,8 @@ export class ForumComponent implements OnInit {
   isAuthenticated: boolean;
   listConfig: Post = {type: 'all', filters: {}};
 
-  tags: Array<any> = null;
-  selectedTags: Array<any> = null;
+  tags: any = null;
+  selectedTags: any = null;
   tagsLoaded = false;
 
   content: string;
