@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ResourceComponent } from './resource/resource.component';
 import { ForumComponent } from './forum/forum.component';
 import { PostComponent } from './forum/post/post.component';
+import { ArticleComponent } from './forum/article/article.component';
 import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
   { path: 'forum', component: ForumComponent },
+  { path: 'article', component: ArticleComponent },
   { path: 'resource', component: ResourceComponent }
 ];
 

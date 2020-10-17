@@ -32,6 +32,7 @@ import { AppComponent } from './app.component';
 import { ResourceComponent } from './resource/resource.component';
 import { ForumComponent } from './forum/forum.component';
 import { PostComponent } from './forum/post/post.component';
+import { ArticleComponent } from './forum/article/article.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule} from './app-routing.module';
@@ -51,6 +52,7 @@ export function appInitializerFactory(authService: AuthService) {
     HomeComponent,
     ForumComponent,
     PostComponent,
+    ArticleComponent,
     HeaderComponent
   ],
   imports: [

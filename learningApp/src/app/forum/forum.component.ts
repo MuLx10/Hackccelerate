@@ -16,7 +16,7 @@ export class ForumComponent implements OnInit {
 
   constructor(private _http: ForumService, private cdRef:ChangeDetectorRef) { }
 
-  user: string = "all";
+  username: string = "all";
   isAuthenticated: boolean;
   listConfig: Post = {type: 'all', filters: {}};
 

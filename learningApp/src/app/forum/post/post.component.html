@@ -1,4 +1,4 @@
-<mat-card *ngFor="let post of posts">
+<mat-card *ngFor="let post of posts" (click)="openArticle(post)">
 	<mat-card-title>{{post.title}}</mat-card-title>
 	<mat-card-subtitle>@{{post.user}}</mat-card-subtitle>
 	<mat-card-content>

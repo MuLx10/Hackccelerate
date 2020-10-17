@@ -17,8 +17,12 @@
 	padding-right: 30%;
 }
 .sidebar{
-	position: absolute;
-	right: 10%;
-	top:30%;
-	z-index: 10;
+	float: right;
+	margin-top:50%;
+	margin-left:50%;
+}
+.row{
+	display: grid;
+	grid-template-columns: 3fr 1.5fr;
+	flex-direction: row;
 }

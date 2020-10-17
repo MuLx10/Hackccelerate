@@ -1,0 +1,24 @@
+#like-icon{
+	margin-left:1%;
+	cursor: pointer;
+}
+
+.actions{
+	display: grid;
+	grid-template-columns: 0.5fr 0.5fr 0.5fr;
+}
+
+.container{
+	width:90%;
+	padding:1em;
+	max-width: 700px;
+}
+
+#comment-card{
+	padding: 0.8em;
+	margin: 0.2em;
+}
+
+span{
+	font-size: 0.8em;
+}
