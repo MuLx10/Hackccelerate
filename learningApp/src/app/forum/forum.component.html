@@ -5,13 +5,11 @@
     	<mat-tab-group>
     	  <mat-tab label="Discuss">
     	    <ng-template matTabContent>
-    	      {{getPosts(1)}}
     	      <app-post [user]="user" [tags]="selectedTags"></app-post>
     	    </ng-template>
     	  </mat-tab>
     	  <mat-tab label="My Posts">
     	    <ng-template matTabContent>
-    	      {{getPosts(2)}}
     	      <app-post [user]="user" [tags]="selectedTags"></app-post>
     	    </ng-template>
     	  </mat-tab>

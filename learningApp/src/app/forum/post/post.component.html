@@ -8,7 +8,16 @@
 		  <mat-chip *ngFor="let tag of post.tags">{{tag}} </mat-chip>
 		</mat-chip-list>
 	</mat-card-content>
-	<mat-icon id="like-icon" matBadge="{{post.likes}}" matBadgeColor="accent" matBadgeSize="small">thumb_up</mat-icon>
+	<div class="actions">
+		<mat-icon 
+		  id="like-icon"
+			matBadge="{{post.likes}}" 
+			(click)="likePost(post.id)" 
+			matBadgeColor="accent" matBadgeSize="small">thumb_up</mat-icon>
+		{{post.comments.length}} Comments
+	</div>
+	<mat-card-footer></mat-card-footer>
+	<br/><br/>
 </mat-card>
 
 

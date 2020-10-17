@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 import { ForumService } from '../../services/forum.service';
 @Component({
   selector: 'app-post',
@@ -11,10 +9,8 @@ import { ForumService } from '../../services/forum.service';
 export class PostComponent implements OnInit {
 	posts: Object;
 
-  constructor(private _http: ForumService, iconReg: MatIconRegistry, sanitizer: DomSanitizer) {
-  	// iconReg.addSvgIcon(
-  	// 	'thi'
-  	// )
+  constructor(private _http: ForumService) {
+
   }
 
   ngOnInit(): void {
@@ -23,6 +19,10 @@ export class PostComponent implements OnInit {
   		if(this.user !== 'all')
   			this.posts = this.posts.filter(e=>e.user === this.user);
   	});
+  }
+
+  likePost(id){
+  	console.log(id);
   }
 
 }
