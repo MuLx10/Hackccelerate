@@ -1,0 +1,24 @@
+<mat-card *ngFor="let post of posts" (click)="openArticle(post)">
+	<mat-card-title>{{post.title}}</mat-card-title>
+	<mat-card-subtitle>@{{post.user}}</mat-card-subtitle>
+	<mat-card-content>
+		{{post.content}}
+		<br/><br/>
+		<mat-chip-list class="tags" aria-label="tags">
+		  <mat-chip *ngFor="let tag of post.tags">{{tag}} </mat-chip>
+		</mat-chip-list>
+	</mat-card-content>
+	<div class="actions">
+		<mat-icon 
+		  id="like-icon"
+			matBadge="{{post.likes}}" 
+			(click)="likePost(post.id)" 
+			matBadgeColor="accent" matBadgeSize="small">thumb_up</mat-icon>
+		{{post.comments.length}} Comments
+	</div>
+	<mat-card-footer></mat-card-footer>
+	<br/><br/>
+</mat-card>
+
+
+

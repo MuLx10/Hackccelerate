@@ -1,0 +1,44 @@
+<div class="home-page">
+  <div class="container page">
+    <div class="row">
+    	
+    	<mat-tab-group>
+    	  <mat-tab label="Discuss">
+    	    <ng-template matTabContent>
+    	      <app-post [username]="username" [tags]="selectedTags"></app-post>
+    	    </ng-template>
+    	  </mat-tab>
+    	  <mat-tab label="My Posts">
+    	    <ng-template matTabContent>
+    	      <app-post [username]="username" [tags]="selectedTags"></app-post>
+    	    </ng-template>
+    	  </mat-tab>
+    	</mat-tab-group>
+
+
+      <div class="sidebar">
+        <p>Popular Tags</p>
+
+        <mat-chip-list class="tags" aria-label="Fish selection">
+          <mat-chip *ngFor="let tag of tags" 
+            [selected]="tag.selected" 
+            (selectionChange)="changeSelected($event)"
+            (click)="tag.selected=!tag.selected">{{tag.name}} </mat-chip>
+        </mat-chip-list>
+
+        <div [hidden]="tagsLoaded">
+          Loading tags...
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer paginator">
+    	<mat-paginator [length]="100"
+    	              [pageSize]="10"
+    	              [pageSizeOptions]="[5, 10, 25, 100]">
+    	</mat-paginator>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+		<mat-card>
+			<mat-card-title>{{post.title}}</mat-card-title>
+			<mat-card-subtitle>@{{post.user}}</mat-card-subtitle>
+			<mat-card-content>
+				{{post.content}}
+				<br/><br/>
+				<mat-chip-list class="tags" aria-label="tags">
+				  <mat-chip *ngFor="let tag of post.tags">{{tag}} </mat-chip>
+				</mat-chip-list>
+			</mat-card-content>
+			<div class="actions">
+				<mat-icon 
+				  id="like-icon"
+					matBadge="{{post.likes}}" 
+					(click)="likePost(post.id)" 
+					matBadgeColor="accent" matBadgeSize="small">thumb_up</mat-icon>
+				<mat-icon 
+				  id="like-icon"
+					matBadge="{{post.comments.length}}" 
+					(click)="commentOnPost(post.id)" 
+					matBadgeColor="warm" matBadgeSize="small">comment</mat-icon>
+				<span>{{post.timestamp}}</span>
+			</div>
+		</mat-card>
+
+		<br/><br/>
+		<br/><br/>
+
+		<div *ngFor="let comment of comments">
+			<mat-card id="comment-card">
+				<mat-card-content>
+					{{comment.content}}
+				</mat-card-content>
+				<mat-card-subtitle>@{{comment.user}}</mat-card-subtitle>
+				<div class="actions">
+					<mat-icon 
+					  id="like-icon"
+						matBadge="{{comment.likes}}" 
+						(click)="likeComment(comment.id)" 
+						matBadgeColor="primary" matBadgeSize="small">thumb_up</mat-icon>
+					<span>{{comment.timestamp}}</span>
+				</div>
+			</mat-card>
+		</div>
+	</div>
+</div>

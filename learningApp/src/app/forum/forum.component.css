@@ -1,0 +1,28 @@
+.nav-link {
+  cursor:pointer;
+}
+
+.tag-pill{
+  cursor:pointer;
+}
+
+.tags{
+	width: 30%;
+}
+
+.paginator{
+	bottom: 0;
+	right: 40%;
+	padding: 5%;
+	padding-right: 30%;
+}
+.sidebar{
+	float: right;
+	margin-top:50%;
+	margin-left:50%;
+}
+.row{
+	display: grid;
+	grid-template-columns: 3fr 1.5fr;
+	flex-direction: row;
+}

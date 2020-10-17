@@ -1,25 +1,29 @@
-ul {
-  list-style: none;
+#navbar {
+  background: #6f00ff;
+  padding: 1em 0;
+}
+#navbar a {
+  color: white;
+  text-decoration: none;
+}
+#navbar a.logo {
+  font-weight: bold;
+}
+#navbar nav {
+  float: right;
+}
+#navbar nav ul {
+  list-style-type: none;
+  margin: 0;
   display: flex;
 }
-
-ul li a{
-  padding: 5px;
-  width: 30px;
-  height: 30px;
+#navbar nav ul li a {
+  padding: 1em;
+}
+#navbar nav ul li a:hover {
+  background: #5900cc;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-button {
-  margin: 0px;
-  padding: 5px;
-  line-height: 30px;
-}
-
-.spacer {
-  flex: 1 1 auto;
+h1 {
+  margin-top: 2em;
 }
