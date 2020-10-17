@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {Post} from '../models/post.model';
+import { Router } from '@angular/router';
 import { ForumService } from '../services/forum.service';
 import { ChangeDetectorRef } from '@angular/core';
-
-
 
 @Component({
   selector: 'app-forum',
@@ -14,7 +13,7 @@ import { ChangeDetectorRef } from '@angular/core';
 
 export class ForumComponent implements OnInit {
 
-  constructor(private _http: ForumService, private cdRef:ChangeDetectorRef) { }
+  constructor(private _http: ForumService, private cdRef:ChangeDetectorRef, private router: Router) { }
 
   username: string = "all";
   isAuthenticated: boolean;
@@ -52,6 +51,10 @@ export class ForumComponent implements OnInit {
 
   changeSelected($event){
     this.selectedTags = this.tags.filter(e=>e.selected === true);
+  }
+
+  goToCompose(){
+    this.router.navigate(['compose']);
   }
 
 }

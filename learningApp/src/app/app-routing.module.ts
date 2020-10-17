@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ResourceComponent } from './resource/resource.component';
 import { ForumComponent } from './forum/forum.component';
 import { PostComponent } from './forum/post/post.component';
+import { ComposeComponent } from './forum/compose/compose.component';
 import { ArticleComponent } from './forum/article/article.component';
 import { HeaderComponent } from './header/header.component';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   },
   { path: 'forum', component: ForumComponent },
   { path: 'article', component: ArticleComponent },
+  { path: 'compose', component: ComposeComponent }, 
   { path: 'resource', component: ResourceComponent }
 ];
 

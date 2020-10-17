@@ -1,4 +1,4 @@
-<div class="container">
+<div id="comment-container" class="container">
   <div class="row">
 		<mat-card>
 			<mat-card-title>{{post.title}}</mat-card-title>
@@ -13,11 +13,13 @@
 			<div class="actions">
 				<mat-icon 
 				  id="like-icon"
+				  color="accent"
 					matBadge="{{post.likes}}" 
 					(click)="likePost(post.id)" 
-					matBadgeColor="accent" matBadgeSize="small">thumb_up</mat-icon>
+					matBadgeColor="accent" matBadgeSize="small">favorite</mat-icon>
 				<mat-icon 
 				  id="like-icon"
+				  color="primary"
 					matBadge="{{post.comments.length}}" 
 					(click)="commentOnPost(post.id)" 
 					matBadgeColor="warm" matBadgeSize="small">comment</mat-icon>
@@ -37,9 +39,10 @@
 				<div class="actions">
 					<mat-icon 
 					  id="like-icon"
+					  color="accent"
 						matBadge="{{comment.likes}}" 
 						(click)="likeComment(comment.id)" 
-						matBadgeColor="primary" matBadgeSize="small">thumb_up</mat-icon>
+						matBadgeColor="primary" matBadgeSize="small">favorite</mat-icon>
 					<span>{{comment.timestamp}}</span>
 				</div>
 			</mat-card>
