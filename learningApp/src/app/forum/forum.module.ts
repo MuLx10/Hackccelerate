@@ -6,7 +6,7 @@ import { PostComponent } from './post/post.component';
 @NgModule({
   declarations: [PostComponent],
   imports: [
-    CommonModule,
+    CommonModule
   ],
   exports: [
   ]

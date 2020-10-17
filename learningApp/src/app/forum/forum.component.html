@@ -14,11 +14,13 @@
     	  <mat-tab label="Discuss">
     	    <ng-template matTabContent>
     	      {{getPosts(1)}}
+    	      <app-post></app-post>
     	    </ng-template>
     	  </mat-tab>
     	  <mat-tab label="My Posts">
     	    <ng-template matTabContent>
     	      {{getPosts(2)}}
+    	      <app-post></app-post>
     	    </ng-template>
     	  </mat-tab>
     	</mat-tab-group>
@@ -31,7 +33,8 @@
           <mat-chip-list class="tags" aria-label="Fish selection">
             <mat-chip>One </mat-chip>
             <mat-chip>Two </mat-chip>
-            <mat-chip color="primary" selected>Primary </mat-chip>
+            
+            <mat-chip color="primary">Primary </mat-chip>
           </mat-chip-list>
 
           <div [hidden]="tagsLoaded">
@@ -40,6 +43,7 @@
         </div>
       </div>
     </div>
+
     <div class="footer paginator">
     	<mat-paginator [length]="100"
     	              [pageSize]="10"

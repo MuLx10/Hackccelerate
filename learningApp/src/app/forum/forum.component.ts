@@ -25,12 +25,12 @@ export class ForumComponent implements OnInit {
   constructor() { }
 
   isAuthenticated: boolean;
-  listConfig: ArticleListConfig = {
-    type: 'all',
-    filters: {}
-  };
-  tags: Array<string> = [];
+  listConfig: ArticleListConfig = {type: 'all', filters: {}};
+
+  tags: Array<string> = ['One', 'Two', 'Three'];
+  tagsSelected: Array<string> = ['One', 'Three'];
   tagsLoaded = false;
+  
   content: string;
 
   ngOnInit(): void {

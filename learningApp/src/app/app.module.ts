@@ -30,6 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResourceComponent } from './resource/resource.component';
 import { HomeComponent } from './home/home.component';
 import { ForumComponent } from './forum/forum.component';
+import { PostComponent } from './forum/post/post.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -42,7 +44,8 @@ const routes: Routes = [
     AppComponent,
     ResourceComponent,
     HomeComponent,
-    ForumComponent
+    ForumComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
