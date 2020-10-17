@@ -1,0 +1,40 @@
+<mat-card style="text-align: center;">
+  <mat-card-title>Sign Up</mat-card-title>
+  <mat-card-content>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)='onSignup(signUpForm)' #signUpForm='ngForm' *ngIf='!isLoading' >
+
+      <div class="radio-button">
+        <label>You are a </label>
+        <mat-radio-group ngModel #roleType='ngModel' name="role" required>
+          <mat-radio-button value="1">Student</mat-radio-button>
+          <mat-radio-button value="2">Teacher</mat-radio-button>
+          <mat-radio-button value="3">Parent</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <mat-form-field>
+        <input matInput type='text' name='name' ngModel placeholder="Full Name" #nameInput="ngModel" required>
+        <mat-error *ngIf='nameInput.invalid' >Please enter a valid name.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type='email' name='email' ngModel placeholder="E-mail" #emailInput="ngModel" required email>
+        <mat-error *ngIf='emailInput.invalid' >Please enter a valid email.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type='password' name='password' ngModel matInput #passwordInput='ngModel' required placeholder="Password">
+        <mat-error *ngIf='passwordInput.invalid'>Please enter a valid password.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type='password' name='confirmPassword' ngModel matInput #confPasswordInput='ngModel' required placeholder="Confirm Password">
+        <mat-error *ngIf='confPasswordInput.invalid'>Please enter a valid password.</mat-error>
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary" *ngIf='!isLoading'>Sign Up</button>
+    </form>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <div class="login">Already have an account! <a [routerLink]="['/auth/login']" > Login </a> here</div>
+</mat-card>
+
+

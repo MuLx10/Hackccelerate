@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button';
@@ -22,16 +21,33 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule} from '@angular/material/card';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule} from '@angular/forms';
+import { RouterModule} from '@angular/router';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatMenuModule} from '@angular/material/menu';
+import { MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResourceComponent } from './resource/resource.component';
-import { HomeComponent } from './home/home.component';
 import { ForumComponent } from './forum/forum.component';
 import { PostComponent } from './forum/post/post.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule} from './app-routing.module';
 
+import { AuthInterceptor} from './interceptors/auth-interceptor';
+import { AuthService} from './services/auth.service';
+
+export function appInitializerFactory(authService: AuthService) {
+  return () => authService.checkUserOnFirstLoad();
+}
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -45,12 +61,13 @@ const routes: Routes = [
     ResourceComponent,
     HomeComponent,
     ForumComponent,
-    PostComponent
+    PostComponent,
+    HeaderComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
     MatSliderModule,
     MatIconModule,
     MatButtonModule,
@@ -71,9 +88,29 @@ const routes: Routes = [
     MatCardModule,
     MatChipsModule,
     MatProgressSpinnerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    HttpClientModule,
+    FlexLayoutModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    FormsModule,
+    RouterModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }, {
+    provide: APP_INITIALIZER,
+    useFactory: appInitializerFactory,
+    multi: true,
+    deps: [AuthService],
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

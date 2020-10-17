@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
+.mat-card {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+  max-width: 350px;
+}
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+.login {
+  padding-top: 16px;
+}
+
+.radio-button {
+  width: 100%;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.125;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  color: rgba(0,0,0,.87);
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+label {
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-right: 16px;
+}
+
+.login a {
+  text-decoration: none;
+  cursor: pointer;
+}

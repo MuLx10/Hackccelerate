@@ -1,0 +1,25 @@
+ul {
+  list-style: none;
+  display: flex;
+}
+
+ul li a{
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  margin: 0px;
+  padding: 5px;
+  line-height: 30px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
