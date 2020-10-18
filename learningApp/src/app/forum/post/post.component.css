@@ -5,5 +5,13 @@
 
 .actions{
 	display: grid;
-	grid-template-columns: 0.5fr 1fr;
+	grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+
+span{
+	font-size: 0.8em;
+}
+
+.mat-card-content, .mat-card-title{
+	cursor: pointer;
 }

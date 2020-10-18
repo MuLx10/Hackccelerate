@@ -6,6 +6,7 @@ import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/a
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { ForumService } from '../../services/forum.service';
 
 
@@ -17,9 +18,12 @@ import { ForumService } from '../../services/forum.service';
 export class ComposeComponent implements OnInit {
 	title: String ='';
 	content: String = '';
+
 	visible = true;
   selectable = true;
   removable = true;
+  showSpinner = false;
+
   separatorKeysCodes: number[] = [ENTER, COMMA];
   tagCtrl = new FormControl();
   filteredTags: Observable<string[]>;
@@ -29,7 +33,7 @@ export class ComposeComponent implements OnInit {
   @ViewChild('tagInput') tagInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
-  constructor(private _http: ForumService) {
+  constructor(private _http: ForumService, private router: Router) {
   	this._http.fetchAllTags().subscribe(data=>{
   		this.allTags = JSON.parse(JSON.stringify(data)).map(e=>e.name);
 
@@ -38,8 +42,6 @@ export class ComposeComponent implements OnInit {
   		        map((tag: string | null) => tag ? this._filter(tag) : this.allTags.slice()));
   		
   	});
-
-  	
   }
 
   ngOnInit(): void {
@@ -49,7 +51,16 @@ export class ComposeComponent implements OnInit {
   }
 
   onSubmit(){
-
+    this.showSpinner = true;
+    this._http.createPost({
+      user: 'mulx10',
+      title: this.title,
+      content: this.content,
+      tags: this.tags
+    }, ()=>{
+      this.showSpinner = false; 
+      this.router.navigateByUrl('/forum');
+    });
   }
 
   add(event: MatChipInputEvent): void {

@@ -15,19 +15,27 @@
 				  id="like-icon"
 				  color="accent"
 					matBadge="{{post.likes}}" 
-					(click)="likePost(post.id)" 
+					(click)="likePost()" 
 					matBadgeColor="accent" matBadgeSize="small">favorite</mat-icon>
 				<mat-icon 
 				  id="like-icon"
 				  color="primary"
-					matBadge="{{post.comments.length}}" 
-					(click)="commentOnPost(post.id)" 
+					matBadge="{{comments.length}}" 
 					matBadgeColor="warm" matBadgeSize="small">comment</mat-icon>
 				<span>{{post.timestamp}}</span>
 			</div>
 		</mat-card>
 
 		<br/><br/>
+
+		<mat-form-field class="example-full-width">
+		  <mat-label>Comment</mat-label>
+		  <textarea [(ngModel)]="commentContent" name="commentContent" matInput placeholder="Write Something here !"></textarea>
+		</mat-form-field>
+		
+		<br/>
+    <button mat-raised-button color="primary" (click)="commentOnPost()">Post</button>
+
 		<br/><br/>
 
 		<div *ngFor="let comment of comments">
@@ -41,7 +49,7 @@
 					  id="like-icon"
 					  color="accent"
 						matBadge="{{comment.likes}}" 
-						(click)="likeComment(comment.id)" 
+						(click)="likeComment(comment._id); comment.likes=1+comment.likes;" 
 						matBadgeColor="primary" matBadgeSize="small">favorite</mat-icon>
 					<span>{{comment.timestamp}}</span>
 				</div>

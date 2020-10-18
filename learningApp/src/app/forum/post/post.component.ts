@@ -16,14 +16,14 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  	this._http.fetchPostsData(this.username, this.tags).subscribe((data: Array<any>) =>{
-  		this.posts = data;
-  		// if(this.username !== 'all')
-  		// 	this.posts = this.posts.filter(e => e.user === this.username);
-  	});
+    this._http.fetchPostsData(this.username, this.tags, (res)=>{
+  		this.posts = res.result;
+      console.log(this.posts)
+    });
   }
 
   likePost(id){
+    this._http.likePost({_id: id}, (res)=>{})
   }
 
   openArticle(post){

@@ -1,6 +1,6 @@
 [
 	{
-		"id":"1",
+		"_id":"1",
 		"title":"How to not freak out during interviews?", 
 		"content": "How to not freak out during interviews, especially when the new norm is online",
 		"user": "mulx10",
@@ -10,7 +10,7 @@
 		"likes":5
 	},
 	{
-		"id":"2",
+		"_id":"2",
 		"title":"Electron in a box", 
 		"content": "Can someone please help me derive the equation for electron in a potential well",
 		"user": "mulx10",
@@ -20,7 +20,7 @@
 		"likes":2
 	},
 	{
-		"id":"2",
+		"_id":"2",
 		"title":"Electron in a box", 
 		"content": "Can someone please help me derive the equation for electron in a potential well",
 		"user": "mulx10",
@@ -30,7 +30,7 @@
 		"likes":2
 	},
 	{
-		"id":"2",
+		"_id":"2",
 		"title":"Electron in a box", 
 		"content": "Can someone please help me derive the equation for electron in a potential well",
 		"user": "mulx10",

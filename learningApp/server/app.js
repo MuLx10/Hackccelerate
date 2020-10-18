@@ -1,6 +1,7 @@
 const express =  require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth.route');
+const forumRoutes = require('./routes/forum.route');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
@@ -33,5 +34,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/user', authRoutes);
+app.use('/api/forum', forumRoutes);
 
 module.exports = app;

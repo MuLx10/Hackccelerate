@@ -1,13 +1,13 @@
-<div id="compose-container" class="container" style="text-align: center;">
+<div id="compose-container" class="container" style="text-align: center;">\
 	<form class="example-form">
 	  <mat-form-field class="example-full-width">
 	    <mat-label>Title</mat-label>
-	    <input matInput placeholder="What you want to discuss" value="">
+	    <input [(ngModel)]="title" name="title" matInput placeholder="What you want to discuss" value="">
 	  </mat-form-field>
 
 	  <mat-form-field class="example-full-width">
 	    <mat-label>Description</mat-label>
-	    <textarea matInput placeholder="Everyone hates to explain. But I kindly request you to do so here"></textarea>
+	    <textarea [(ngModel)]="content" name="content" matInput placeholder="Everyone hates to explain. But I kindly request you to do so here"></textarea>
 	  </mat-form-field>
 
 	  <mat-form-field class="example-chip-list">
@@ -37,6 +37,6 @@
 	  </mat-form-field>
 	  <br/>
     <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
-
+		<mat-spinner *ngIf="showSpinner" size="medium"></mat-spinner>
 	</form>
 </div>

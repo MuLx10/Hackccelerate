@@ -1,20 +1,20 @@
 [
 	{
-		"id":"1",
+		"_id":"1",
 		"user":"dhanistha96",
 		"content": "Drink lots of water",
 		"timestamp":"1",
 		"likes":2
 	},
 	{
-		"id":"2",
+		"_id":"2",
 		"user":"dhanistha96",
 		"content": "Stay calm, Use breathing techinques to calm yourself",
 		"timestamp":"2",
 		"likes":5
 	},
 	{
-		"id":"3",
+		"_id":"3",
 		"user":"dhanistha96",
 		"content": "No, DIY",
 		"timestamp":"3",

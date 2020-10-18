@@ -8,8 +8,8 @@ import { ForumService } from '../../services/forum.service';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
-	id: any;
 	post: any;
+  commentContent: String;
 	comments: Array<any>;
 
   constructor(private _http: ForumService,private route: ActivatedRoute) {
@@ -17,24 +17,31 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
   	this.post = this.route.snapshot.params;
-  	if(this.post){
-  		let comments = this.post.comments;
-  		this._http.fetchComments().subscribe((data: Array<any>) =>{
-  			this.comments = data;
-  		});
-
-  	}
-  	
+	  this._http.fetchComments(this.post._id, (res)=>{
+      this.comments = res.result;
+    });
   }
 
-  likePost(id){
+  likePost(){
+    this._http.likePost({_id: this.post._id, likes: this.post.likes}, (res)=>{
+      this.post = res.result;
+    })
   }
 
   likeComment(id){
-
+    this._http.likeComment({_id: id}, (res)=>{})
   }
 
-  commentOnPost(id){
+  commentOnPost(){
+    let comment = {
+      user:'mulx10',
+      postId: this.post._id,
+      content: this.commentContent 
+    }
+    this._http.commentOnPost(comment, (res)=>{
+      this.comments.unshift(res.result);
+      this.commentContent = '';
+    })
   	
   }
 

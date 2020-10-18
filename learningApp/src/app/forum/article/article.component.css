@@ -22,3 +22,7 @@
 span{
 	font-size: 0.8em;
 }
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}

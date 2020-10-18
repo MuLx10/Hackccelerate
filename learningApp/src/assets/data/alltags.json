@@ -1,5 +1,5 @@
 [
-	{"id": 1, "name": "interviews", "selected": true},
-	{"id": 2, "name": "physics", "selected": false},
-	{"id": 3, "name": "quantam-mechanics", "selected": true}
+	{"_id": 1, "name": "interviews", "selected": true},
+	{"_id": 2, "name": "physics", "selected": false},
+	{"_id": 3, "name": "quantam-mechanics", "selected": true}
 ]
